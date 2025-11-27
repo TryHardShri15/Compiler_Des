@@ -1,0 +1,52 @@
+LEX FILE 
+%{ 
+#include "y.tab.h" 
+%} 
+ 
+%% 
+[0-9]+       { return NUMBER; } 
+[\+\-\*\/]   { return yytext[0]; } 
+[ \t\n]      { /* skip whitespace */ } 
+.            { return yytext[0]; } 
+%% 
+ 
+YACC FILE 
+%{ 
+#include <stdio.h> 
+#include <stdlib.h> 
+int flag = 0; 
+%} 
+ 
+%token NUMBER 
+ 
+%% 
+S : E { printf("Valid Expression\n"); flag = 1; } 
+  ; 
+ 
+E : E '+' T 
+  | E '-' T 
+  | T 
+  ; 
+ 
+T : T '*' F 
+  | T '/' F 
+  | F 
+  ; 
+ 
+F : NUMBER 
+  | '(' E ')' 
+  ; 
+%% 
+ 
+int main() { 
+    printf("Enter Expression: "); 
+    yyparse(); 
+    if (!flag) 
+        printf("Invalid Expression\n"); 
+    return 0; 
+} 
+ 
+int yyerror() { 
+    flag = 0; 
+    return 0; 
+}
