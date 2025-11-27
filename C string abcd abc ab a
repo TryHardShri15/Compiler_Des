@@ -1,0 +1,25 @@
+%{ 
+/* This lex code generates a C program that prints: 
+   abcd 
+   abc 
+   ab 
+   a 
+*/ 
+%} 
+ 
+%% 
+abcd   { 
+printf("#include <stdio.h>\n"); 
+printf("int main() {\n"); 
+printf("    char s[] = \"abcd\";\n"); 
+printf("    for(int i = 4; i > 0; i--) {\n"); 
+printf("        for(int j = 0; j < i; j++) printf(\"%%c\", s[j]);\n"); 
+printf("        printf(\"\\n\");\n"); 
+printf("    }\n"); 
+printf("    return 0;\n"); 
+printf("}\n"); 
+} 
+.      ; 
+%% 
+ 
+int yywrap() { return 1; }
