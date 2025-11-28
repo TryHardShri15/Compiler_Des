@@ -14,3 +14,9 @@ int main(){
     printf("Words=%d\nChars=%d\nBlanks=%d\nLines=%d\n", words, 
 chars, blanks, lines); 
 }
+
+OUTPUT:
+Words=22
+Chars=115
+Blanks=47
+Lines=18
