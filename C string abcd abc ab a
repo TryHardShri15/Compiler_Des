@@ -23,3 +23,9 @@ printf("}\n");
 %% 
  
 int yywrap() { return 1; }
+
+OUTPUT:
+abcd
+abc
+ab
+a
