@@ -11,3 +11,7 @@ int main() {
     yylex(); 
     printf("Vowels = %d\nConsonants = %d\n", v, c); 
 }
+
+OUTPUT:
+Vowels = 
+Consonants = 
