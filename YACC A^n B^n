@@ -47,3 +47,8 @@ int yyerror(char *s) {
     valid = 0; 
     return 0; 
 }
+
+Example : aabb
+
+OUTPUT:
+Valid String (a^n b^n)
