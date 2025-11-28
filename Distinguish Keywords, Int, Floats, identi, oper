@@ -22,3 +22,13 @@ COMMENT   "//".*
  
 int main(){ yylex();  
 }
+
+OUTPUT:
+KEYWORD: int
+KEYWORD: char
+FLOAT: 3.14
+INTEGER: 15
+IDENTIFIER: x
+OPERATOR: +
+COMMENT:
+OTHER: $
