@@ -22,3 +22,7 @@ int main() {
         printf("Invalid expression\n"); 
     return 0; 
 }
+
+Example: 2+3*5
+OUTPUT: 
+Valid expression
