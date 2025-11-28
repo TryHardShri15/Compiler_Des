@@ -14,3 +14,7 @@ int main(){
     yylex(); 
     printf("Longest word = %s\n", longest); 
 } 
+
+Example : car bike metro
+OUTPUT:
+Longest word = metro
