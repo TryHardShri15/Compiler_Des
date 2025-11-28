@@ -9,3 +9,9 @@ int main() {
  yylex();
  printf("Lines = %d\nCharacters = %d\n", lines, chars);
  return 
+
+
+example input : abc -> a,b,c,\n 
+OUTPUT:
+Lines = 1
+Characters = 4
